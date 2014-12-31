@@ -22,4 +22,20 @@
     - cd $ANDROID_ROOT
     - echo "y"|repo init -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
     - repo sync|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
+
+    - cd $ANDROID_ROOT/device/lge/hammerhead
+    - ./extract-files.sh
+    - export USE_CCACHE=1
+    - #cd $JCROM_ROOT
+    - #export ARCH=arm
+    - #export CROSS_COMPILE=$ANDROID_ROOT/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
+    - #git clone https://android.googlesource.com/kernel/msm.git -b android-msm-hammerhead-3.4-lollipop-release kernel/nexus5
+    - #cd kernel/nexus5
+    - #make hammerhead_defconfig
+    - #make -j8
+    - #cp arch/arm/boot/zImage-dtb $ANDROID_ROOT/device/lge/hammerhead-kernel/zImage-dtb
+    - cd $ANDROID_ROOT
+    - source build/envsetup.sh
+    - lunch jcrom_hammerhead-user
+    - make jcrom -j8
     
