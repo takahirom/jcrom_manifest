@@ -21,7 +21,15 @@
     - export ANDROID_ROOT=~/jcrom_work/android
     - cd $ANDROID_ROOT
     - echo "y"|repo init -q -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
-    - repo sync -q|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
+
+    - MAX=30
+    - i=0
+    - while [ $i -le $MAX ]; do
+    -     echo "$i" 1>&2
+    -     i=`expr $i + 1`
+    -     repo sync -q
+    -     sleep 4
+    - done
 
     - cd $ANDROID_ROOT/device/lge/hammerhead
     - ./extract-files.sh
@@ -37,5 +45,5 @@
     - cd $ANDROID_ROOT
     - source build/envsetup.sh
     - lunch jcrom_hammerhead-user
-    - make jcrom -j8
+    - make -s jcrom -j8
     
