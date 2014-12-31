@@ -20,6 +20,6 @@
     - export JCROM_ROOT=~/jcrom_work
     - export ANDROID_ROOT=~/jcrom_work/android
     - cd $ANDROID_ROOT
-    - echo "y"|repo init -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli|grep -v "Receiving "|grep -v "\[new "
-    - repo sync|grep -v "Receiving "|grep -v "\[new "
+    - echo "y"|repo init -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
+    - repo sync|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
     
