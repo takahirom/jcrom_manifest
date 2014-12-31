@@ -54,7 +54,7 @@
      - #make -j8
      - #cp arch/arm/boot/zImage-dtb $ANDROID_ROOT/device/lge/hammerhead-kernel/zImage-dtb
  test:
-   override:
+   post:
      - cd $ANDROID_ROOT
      - source build/envsetup.sh
      - lunch jcrom_hammerhead-user
