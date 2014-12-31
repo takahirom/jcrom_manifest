@@ -20,7 +20,11 @@ export JCROM_ROOT=~/jcrom_work
 export ANDROID_ROOT=~/jcrom_work/android
 cd $ANDROID_ROOT
 echo "y"|repo init -q -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
-repo sync -f -q
+wget https://ww-command-line-wrapper.googlecode.com/files/ww.c
+gcc ww.c
+./a.out "repo sync -q -j4" 120
+#repo sync -q -j4
+#repo sync -f -q
 #repo sync -q -j4
 #if test $? -ne 0; then  repo sync -q -j4 ;fi 
 #if test $? -ne 0; then  repo sync -q -j4 ;fi 
