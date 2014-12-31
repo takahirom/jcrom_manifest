@@ -20,6 +20,6 @@
     - export JCROM_ROOT=~/jcrom_work
     - export ANDROID_ROOT=~/jcrom_work/android
     - cd $ANDROID_ROOT
-    - repo init -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli
+    - echo "y"|repo init -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli
     - repo sync
     
