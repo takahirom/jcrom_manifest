@@ -50,7 +50,7 @@ dependencies:
     - #make hammerhead_defconfig
     - #make -j8
     - #cp arch/arm/boot/zImage-dtb $ANDROID_ROOT/device/lge/hammerhead-kernel/zImage-dtb
-build:
+test:
   override:
     - cd $ANDROID_ROOT
     - source build/envsetup.sh
