@@ -6,8 +6,7 @@
     - git config --global user.email "android"
     - git config --global user.name "android"
     - mkdir ~/bin
-    - #curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-    - curl http://github.com/ossxp-com/repo/raw/master/repo > ~/bin/repo
+    - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
     - chmod a+x ~/bin/repo
     - export PATH=$PATH:~/bin
     - export CC=gcc-4.6
