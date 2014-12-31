@@ -21,26 +21,22 @@
     - export ANDROID_ROOT=~/jcrom_work/android
     - cd $ANDROID_ROOT
     - echo "y"|repo init -q -u https://github.com/JCROM-Android/jcrom_manifest.git -b lolli|grep -v "Receiving "|grep -v "new tag"|grep -v "new branch"
-
-    - MAX=30
-    - i=0
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
-    - repo sync -q
+    - repo sync -q -j4
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q -j4 ;fi 
+    - if test $? -ne 0; then  repo sync -q ;fi 
+    - if test $? -ne 0; then  repo sync -q ;fi 
+    - if test $? -ne 0; then  repo sync -q ;fi 
+    - if test $? -ne 0; then  repo sync -q ;fi 
+    - if test $? -ne 0; then  repo sync -q ;fi 
     - cd $ANDROID_ROOT/device/lge/hammerhead
     - ./extract-files.sh
     - export USE_CCACHE=1
