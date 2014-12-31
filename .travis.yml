@@ -24,13 +24,7 @@
 
     - MAX=30
     - i=0
-    - while [ $i -le $MAX ]; do
-    -     echo "$i" 1>&2
-    -     i=`expr $i + 1`
-    -     repo sync -q
-    -     sleep 4
-    - done
-
+    - while [ $i -le $MAX ]; do; echo "$i" 1>&2; i=`expr $i + 1`; repo sync -q;sleep 4;done
     - cd $ANDROID_ROOT/device/lge/hammerhead
     - ./extract-files.sh
     - export USE_CCACHE=1
